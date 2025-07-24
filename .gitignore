@@ -415,10 +415,6 @@ testing/
 !docker-compose.yml
 
 # Keep sample/demo result files (small ones)
-!results/demo_results.json
-!results/summary_metrics.csv
-!results/trading_performance.csv
-!results/result_generator.py
 
 # Keep documentation
 !docs/
@@ -448,3 +444,5 @@ testing/
 # - Small demo result files
 # - Project structure files
 results/
+venv/
+.venv/
