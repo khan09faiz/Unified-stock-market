@@ -1,0 +1,12 @@
+Stock,Current_Price,Sentiment_Score,Forecast_MAPE,R2_Score,Trading_Return,Sharpe_Ratio,Win_Rate,Final_Net_Worth,Investment_Signal,Confidence
+AAPL,214.15,1.000,3.33,0.815,37.17,1.664,58.4,13716.97,BUY,HIGH
+GOOGL,190.23,1.000,3.73,0.806,28.66,1.500,50.4,12866.37,BUY,HIGH
+MSFT,505.87,1.000,3.21,0.911,44.80,1.577,45.2,14480.06,BUY,HIGH
+
+Portfolio_Summary:
+Average_Return: 36.88%
+Average_Sharpe: 1.58
+Best_Performer: MSFT
+Total_Portfolio_Value: 40,863.40
+Initial_Investment: 30,000.00
+Total_Portfolio_Return: 36.21%
