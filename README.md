@@ -342,18 +342,3 @@ print(f'Live recommendation: {result.get(\"recommendation\", \"N/A\")}')
 "
 ```
 
-## ⚠️ Disclaimer
-
-Educational and research purposes only. Not investment advice. Trading involves substantial risk. Past performance doesn't guarantee future results.
-
-## 📞 Contact
-
-- **Author**: Faiz Khan
-- **GitHub**: [@khan09faiz](https://github.com/khan09faiz)
-- **Project**: [Unified-stock-market](https://github.com/khan09faiz/Unified-stock-market)
-
----
-
-**🎯 Status**: Production Ready ✅ | **Last Tested**: July 24, 2025 | **Success Rate**: 100%
-
-Built with ❤️ for the quantitative finance community

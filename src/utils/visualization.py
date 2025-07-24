@@ -290,13 +290,21 @@ def calculate_performance_metrics(returns: pd.Series, benchmark_returns: Optiona
     
     returns_clean = returns.dropna()
     
+    # Convert to float if needed
+    std_val = float(returns_clean.std()) if hasattr(returns_clean.std(), 'item') else returns_clean.std()
+    mean_val = float(returns_clean.mean()) if hasattr(returns_clean.mean(), 'item') else returns_clean.mean()
+    
+    # Calculate max drawdown
+    drawdown = (returns_clean.cumsum() - returns_clean.cumsum().cummax()).min()
+    max_drawdown_val = float(drawdown) if hasattr(drawdown, 'item') else drawdown
+    
     metrics = {
         'Total Return': (1 + returns_clean).prod() - 1,
-        'Annualized Return': returns_clean.mean() * 252,
-        'Volatility': returns_clean.std() * np.sqrt(252),
-        'Sharpe Ratio': (returns_clean.mean() / returns_clean.std()) * np.sqrt(252) if returns_clean.std() > 0 else 0,
-        'Max Drawdown': (returns_clean.cumsum() - returns_clean.cumsum().cummax()).min(),
-        'Calmar Ratio': (returns_clean.mean() * 252) / abs((returns_clean.cumsum() - returns_clean.cumsum().cummax()).min()) if (returns_clean.cumsum() - returns_clean.cumsum().cummax()).min() != 0 else 0
+        'Annualized Return': mean_val * 252,
+        'Volatility': std_val * np.sqrt(252),
+        'Sharpe Ratio': (mean_val / std_val) * np.sqrt(252) if std_val > 0 else 0,
+        'Max Drawdown': max_drawdown_val,
+        'Calmar Ratio': (mean_val * 252) / abs(max_drawdown_val) if max_drawdown_val != 0 else 0
     }
     
     # Win rate
